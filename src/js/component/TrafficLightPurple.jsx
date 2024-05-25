@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
+import "./TrafficLightPurple.css";
 
-const TrafficLight = () => {
+const TrafficLightPurple = () => {
   const [color, setColor] = useState("");
-  const colors = ["red", "yellow", "green"];
+  const colors = ["red", "yellow", "green", "purple"];
   const [isRunning, setIsRunning] = useState(false);
 
   useEffect(() => {
@@ -58,13 +59,21 @@ const TrafficLight = () => {
             }`}
             style={{ height: "150px ", width: "130px" }}
           ></button>
+          <button
+            onClick={() => playColor(colors[3])}
+            type="button"
+            className={`btn m-3 rounded-circle ${
+              color === "purple" ? "purple-color" : "btn-secondary"
+            }`}
+            style={{ height: "150px ", width: "130px" }}
+          ></button>
         </div>
       </div>
-      <div className=" col-6 d-flex justify-content-center mt-3">
+      <div className="d-flex justify-content-center mt-3">
         <button
           onClick={() => setIsRunning(!isRunning)}
           type="button"
-          className={isRunning ? "btn btn-danger" : "btn btn-success"}
+          className={isRunning ? "btn btn-danger px-5" : "btn btn-success px-5"}
         >
           {isRunning ? "Detener" : "Iniciar"} Semaforo
         </button>
@@ -73,4 +82,4 @@ const TrafficLight = () => {
   );
 };
 
-export default TrafficLight;
+export default TrafficLightPurple;
