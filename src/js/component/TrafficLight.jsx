@@ -11,10 +11,10 @@ const TrafficLight = () => {
       interval = setInterval(() => {
         setColor((prevColor) => {
           const actualColor = colors.indexOf(prevColor);
-          const nextColor = (actualColor + 1) % colors.length;
+          const nextColor = (actualColor + 1) % colors.length; // nos permite volver al inicio del array
           return colors[nextColor];
         });
-      }, 1000);
+      }, 1100);
     } else if (!isRunning && color !== "") {
       clearInterval(interval);
     }
@@ -30,7 +30,7 @@ const TrafficLight = () => {
     <div className="row d-flex justify-content-center">
       <div
         className="col-1 bg-black"
-        style={{ height: "150px", width: "70px" }}
+        style={{ height: "13vh", width: "7vh" }}
       ></div>
       <div className="row d-flex justify-content-center">
         <div className="col-1 d-flex flex-column justify-content-center bg-black rounded">
@@ -40,7 +40,7 @@ const TrafficLight = () => {
             className={`btn m-3 rounded-circle ${
               color === "red" ? "btn-danger" : "btn-secondary"
             }`}
-            style={{ height: "150px ", width: "130px" }}
+            style={{ height: "13vh" }}
           ></button>
           <button
             onClick={() => playColor(colors[1])}
@@ -48,7 +48,7 @@ const TrafficLight = () => {
             className={`btn m-3 rounded-circle ${
               color === "yellow" ? "btn-warning" : "btn-secondary"
             }`}
-            style={{ height: "150px ", width: "130px" }}
+            style={{ height: "13vh " }}
           ></button>
           <button
             onClick={() => playColor(colors[2])}
@@ -56,7 +56,7 @@ const TrafficLight = () => {
             className={`btn m-3 rounded-circle ${
               color === "green" ? "btn-success" : "btn-secondary"
             }`}
-            style={{ height: "150px ", width: "130px" }}
+            style={{ height: "13vh " }}
           ></button>
         </div>
       </div>
