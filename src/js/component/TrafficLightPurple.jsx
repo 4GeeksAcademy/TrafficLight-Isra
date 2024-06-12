@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./TrafficLightPurple.css";
+import "../../styles/TrafficLightPurple.css";
 
 const TrafficLightPurple = () => {
   const [color, setColor] = useState("");
